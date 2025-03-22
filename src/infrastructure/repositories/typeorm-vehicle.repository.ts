@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Vehicle, VehicleStatus } from '../../domain/entities/vehicle.entity';
+import { VehicleEntity } from '../entities/vehicle.entity';
+import { Vehicle } from '../../domain/entities/vehicle.entity';
 import { VehicleRepository } from '../../domain/ports/vehicle-repository.port';
 import { VehicleIdentificationNumber } from '../../domain/value-objects/vehicle-identification-number.value-object';
-import { VehicleEntity } from '../database/entities/vehicle.entity';
 import { VehicleMapper } from '../mappers/vehicle.mapper';
 
 @Injectable()

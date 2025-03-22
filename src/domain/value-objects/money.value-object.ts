@@ -6,6 +6,9 @@ export class Money {
     if (amount < 0) {
       throw new Error('Money amount cannot be negative');
     }
+    if (!currency) {
+      throw new Error('Currency is required');
+    }
   }
 
   getAmount(): number {

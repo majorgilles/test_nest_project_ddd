@@ -11,11 +11,11 @@ export class CreateLeaseDto {
 
   @IsDateString()
   @IsNotEmpty()
-  startDate: string;
+  startDate: Date;
 
   @IsDateString()
   @IsNotEmpty()
-  endDate: string;
+  endDate: Date;
 
   @IsNumber()
   @Min(0)

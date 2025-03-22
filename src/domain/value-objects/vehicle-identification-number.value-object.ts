@@ -4,7 +4,11 @@ export class VehicleIdentificationNumber {
   }
 
   private validate(vin: string): void {
-    if (!vin || vin.length !== 17) {
+    if (!vin) {
+      throw new Error('VIN is required');
+    }
+
+    if (vin.length !== 17) {
       throw new Error('VIN must be exactly 17 characters');
     }
     // Additional VIN validation logic could be added here
