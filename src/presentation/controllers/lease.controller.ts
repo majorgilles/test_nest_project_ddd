@@ -56,8 +56,8 @@ export class LeaseController {
         model: lease.getVehicle().getModel(),
         year: lease.getVehicle().getYear(),
         monthlyLeaseRate: {
-          amount: lease.getVehicle().getMonthlyLeaseRate().getAmount(),
-          currency: lease.getVehicle().getMonthlyLeaseRate().getCurrency(),
+          amount: lease.getVehicle().getPrice().getAmount(),
+          currency: lease.getVehicle().getPrice().getCurrency(),
         },
         status: lease.getVehicle().getStatus(),
       },
@@ -97,8 +97,8 @@ export class LeaseController {
         model: lease.getVehicle().getModel(),
         year: lease.getVehicle().getYear(),
         monthlyLeaseRate: {
-          amount: lease.getVehicle().getMonthlyLeaseRate().getAmount(),
-          currency: lease.getVehicle().getMonthlyLeaseRate().getCurrency(),
+          amount: lease.getVehicle().getPrice().getAmount(),
+          currency: lease.getVehicle().getPrice().getCurrency(),
         },
         status: lease.getVehicle().getStatus(),
       },

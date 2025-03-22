@@ -2,7 +2,7 @@ import { Customer } from './customer.entity';
 
 describe('Customer', () => {
   it('should create a valid Customer', () => {
-    const customer = new Customer('1', 'John', 'Doe', 'john@example.com', '1234567890', true);
+    const customer = new Customer('1', 'John', 'Doe', 'john@example.com', '1234567890', 123);
     
     expect(customer.getId()).toBe('1');
     expect(customer.getFirstName()).toBe('John');
@@ -13,7 +13,7 @@ describe('Customer', () => {
   });
 
   it('should update customer eligibility', () => {
-    const customer = new Customer('1', 'John', 'Doe', 'john@example.com', '1234567890', true);
+    const customer = new Customer('1', 'John', 'Doe', 'john@example.com', '1234567890', 123);
     
     customer.updateEligibility(false);
     expect(customer.isEligibleForLeasing()).toBe(false);

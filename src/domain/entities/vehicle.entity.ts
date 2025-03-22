@@ -4,7 +4,8 @@ import { Money } from '../value-objects/money.value-object';
 export enum VehicleStatus {
   AVAILABLE = 'AVAILABLE',
   UNAVAILABLE = 'UNAVAILABLE',
-  MAINTENANCE = 'MAINTENANCE'
+  MAINTENANCE = 'MAINTENANCE',
+  LEASED = 'LEASED'
 }
 
 export class Vehicle {
@@ -81,5 +82,9 @@ export class Vehicle {
 
   markAsInMaintenance(): void {
     this.status = VehicleStatus.MAINTENANCE;
+  }
+
+  markAsLeased(): void {
+    this.status = VehicleStatus.LEASED;
   }
 } 

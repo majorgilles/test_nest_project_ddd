@@ -9,7 +9,7 @@ describe('Lease', () => {
   let vehicle: Vehicle;
 
   beforeEach(() => {
-    customer = new Customer('1', 'John', 'Doe', 'john@example.com', '1234567890', 123);
+    customer = new Customer('1', 'John', 'Doe', 'john@example.com', '1234567890', 800);
     const vin = new VehicleIdentificationNumber('1HGCM82633A123456');
     const price = new Money(25000, 'USD');
     vehicle = new Vehicle('1', vin, 'Toyota', 'Camry', 2023, price, true);
@@ -20,7 +20,7 @@ describe('Lease', () => {
     const endDate = new Date(startDate.getTime() + 30 * 24 * 60 * 60 * 1000); // 30 days later
     const monthlyPayment = new Money(500, 'USD');
     
-    const lease = new Lease('1', customer, vehicle, startDate, endDate, monthlyPayment, new Money(0, 'USD'), LeaseStatus.ACTIVE);
+    const lease = new Lease('1', customer, vehicle, startDate, endDate, monthlyPayment, new Money(700, 'USD'), LeaseStatus.ACTIVE);
     
     expect(lease.getId()).toBe('1');
     expect(lease.getCustomer()).toBe(customer);
@@ -37,7 +37,7 @@ describe('Lease', () => {
     const endDate = new Date(startDate.getTime() + 30 * 24 * 60 * 60 * 1000);
     const monthlyPayment = new Money(500, 'USD');
     
-    const lease = new Lease('1', customer, vehicle, startDate, endDate, monthlyPayment, new Money(0, 'USD'), LeaseStatus.ACTIVE);
+    const lease = new Lease('1', customer, vehicle, startDate, endDate, monthlyPayment, new Money(700, 'USD'), LeaseStatus.ACTIVE);
     lease.terminate(new Date());
     
     expect(lease.getStatus()).toBe(LeaseStatus.TERMINATED);
